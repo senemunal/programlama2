@@ -1,0 +1,15 @@
+import bs4 as bs
+import urllib.request
+kaynak=urllib.request.urlopen('http://www.webtekno.com/haber').read()
+sayfa=bs.BeautifulSoup(kaynak,'lxml')
+#print(sayfa.findAll('b'))
+for paragraf in sayfa.findAll('span'):
+    print(paragraf.string)
+
+#import bs4 as bs
+#import urllib.request
+#kaynak=urllib.request.urlopen('https://webrazzi.com/').read()
+#sayfa=bs.BeautifulSoup(kaynak,'lxml')
+#print(sayfa.findAll('b'))
+#for paragraf in sayfa.findAll('b'):
+#    print(paragraf.string)
